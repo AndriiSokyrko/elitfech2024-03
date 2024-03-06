@@ -49,8 +49,16 @@ function Cart() {
     const handleSubmit = async ()=> {
         const url = PROTOCOL + URLBASE + UrlHistory + '/' + 'save';
         const localOrders = JSON.parse(localStorage.getItem('orders'))
-        console.log(orders)
-        if(!orders.items.length) {
+        if(!orders.info.name.length || !orders.info.email.length || !orders.info.phone.length || !orders.info.address.length) {
+            setStatus(true)
+            setTextMessage('No address!')
+            setTimeout(()=>{
+                setStatus(false)
+                setTextMessage("Orders is saved succesful!")
+            },1000)
+            return
+        }
+        if(!orders.items.length  ) {
             setStatus(true)
             setTextMessage('No orders! Make orders!')
             setTimeout(()=>{
