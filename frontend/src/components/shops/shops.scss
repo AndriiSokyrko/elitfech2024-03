@@ -1,0 +1,28 @@
+.clx-content {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  gap: 25px;
+  height: 70vh;
+  padding: 50px ;
+
+  .clx-content--shops {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    border: 2px solid grey;
+  }
+  .clx-content--goods{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 90%;
+    padding: 15px;
+    margin: 0 auto;
+    border: 2px solid grey;
+    //overflow: auto;
+  }
+
+}
+

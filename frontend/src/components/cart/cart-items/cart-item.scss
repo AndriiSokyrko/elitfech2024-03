@@ -1,0 +1,42 @@
+.card_item{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border: 2px solid green;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 15px;
+  img{
+    object-fit: cover;
+    max-width:90%;
+    height: auto;
+    overflow: hidden;
+  }
+  .card_item--info {
+    align-self: start;
+    margin: 0;
+    padding: 0;
+    .clx_del{
+      display: flex;
+      justify-content: end;
+      color: red;
+      cursor: pointer;
+      padding-right: 25px;
+    }
+    .clx_title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+    }
+    .clx_price {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    input{
+      height: 25px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Aspirin",
+    "image": "Aspirin.jpg",
+    "price": 35,
+    "idShop": "001",
+    "count": 10
+  },
+  {
+    "title": "Dimidrol",
+    "image": "Dimidrol.jpg",
+    "price": 78,
+    "idShop": "001",
+    "count": 10
+  },
+  {
+    "title": "Kardiomagnil",
+    "image": "Kardiomagnil.jpg",
+    "price": 120,
+    "idShop": "001",
+    "count": 10
+  },
+  {
+    "title": "Nolepril",
+    "image": "Nolepril.jpg",
+    "price": 1020,
+    "idShop": "002",
+    "count": 10
+  },
+  {
+    "title": "Ksalterto",
+    "image": "Ksalterto.jpg",
+    "price": 780,
+    "idShop": "002",
+    "count": 10
+  },
+  {
+    "title": "Diforse",
+    "image": "Diforse.jpg",
+    "price": 560,
+    "idShop": "002",
+    "count": 10
+  },
+  {
+    "title": "Diklofenak",
+    "image": "Diklofenak.jpg",
+    "price": 135,
+    "idShop": "003",
+    "count": 10
+  },
+  {
+    "title": "Magnikor",
+    "image": "Magnikor.jpg",
+    "price": 360,
+    "idShop": "003",
+    "count": 10
+  },
+  {
+    "title": "Flebaven",
+    "image": "Flebaven.jpg",
+    "price": 580,
+    "idShop": "003",
+    "count": 10
+  }
+]
+
