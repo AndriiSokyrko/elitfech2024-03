@@ -6,6 +6,7 @@ import {PROTOCOL, URLBASE, UrlGoods} from "../../ENV/env";
 import {getDrugsByIdShop} from "../../services/drugs/drugServices";
 import CardDrug from "../drugs/card-drug/card-drug";
 import SortComponent from "../sort/sort-component";
+import Favorite from "../favorite/favorite";
 
 const Shops = () => {
     const data = useContext(ShopsContext)
@@ -57,7 +58,9 @@ const Shops = () => {
 
                     </ul>
                     <div className="clx-content--goods">
-                        {drugs.length ? drugs.map(drug => <CardDrug key={drug._id} card={drug} setToCart={setToCart}/>
+                        {drugs.length ? drugs.map(drug => <CardDrug key={drug._id} card={drug} setToCart={setToCart}>
+                            <Favorite/>
+                            </CardDrug>
                         ) : ''
                         }
                     </div>

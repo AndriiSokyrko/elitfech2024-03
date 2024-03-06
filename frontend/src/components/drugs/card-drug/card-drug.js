@@ -1,6 +1,6 @@
 import React from 'react';
 import "./card-drug.scss"
-function CardDrug({card, setToCart}) {
+function CardDrug({children, card, setToCart}) {
     if(card===undefined) return
     const image = require("../../../images/"+card.image)
     const handleAddToCart =()=>{
@@ -13,7 +13,10 @@ function CardDrug({card, setToCart}) {
         <div className="drug_item">
 
             <img src={image} alt=""/>
-            <h1>{card.title}</h1>
+            <div className="drug_item--title">
+                <h1>{card.title}</h1>
+                {children}
+            </div>
             <h3>{card.price} грн.</h3>
             <button onClick={handleAddToCart}>Add to cart</button>
         </div>

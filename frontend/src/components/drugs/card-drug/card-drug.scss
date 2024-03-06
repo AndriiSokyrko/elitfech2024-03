@@ -6,4 +6,11 @@
   img{
     width: 100%;
   }
+  .drug_item--title{
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
 }
