@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from 'react';
 import "./sort-component.scss"
 function SortComponent({sortItems}) {
 
