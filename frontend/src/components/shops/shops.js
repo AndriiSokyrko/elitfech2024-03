@@ -5,6 +5,7 @@ import CardShop from "./card-shop/card-shop";
 import {PROTOCOL, URLBASE, UrlGoods} from "../../ENV/env";
 import {getDrugsByIdShop} from "../../services/drugs/drugServices";
 import CardDrug from "../drugs/card-drug/card-drug";
+import SortComponent from "../sort/sort-component";
 
 const Shops = () => {
     const data = useContext(ShopsContext)
@@ -12,8 +13,6 @@ const Shops = () => {
     const [drugs, setDrugs] = useState([])
     const [activeShop, setActiveShop] = useState('')
     const [toCart, setToCart] = useState([])
-    // localStorage.setItem('cart', JSON.stringify(toCart));
-
     const url = PROTOCOL + URLBASE + UrlGoods + '/' + activeShop;
     useMemo(async () => {
             try {
@@ -25,24 +24,44 @@ const Shops = () => {
             }
         }, [url]
     )
+    const [sortType, setSortType] = useState(null)
+    const sortItems = (par) => {
+         setSortType(par)
+        if(sortType==='price'){
+            const sortDates = drugs.sort((a,b)=>a.price-b.price)
+            setDrugs(sortDates)
+        }
+        if(sortType==='data'){
+            const sortDates = drugs.sort((a,b)=>b.price-a.price)
+
+            setDrugs(sortDates)
+        }
+    }
     useEffect(() => {
         setShops(data)
     }, [data])
+
     return (
-        <div className="clx-content">
-            <ul className="clx-content--shops">
+        <div className="clx_content--wrapper">
+            <SortComponent sortItems={sortItems} />
+            <div>
+                <div className="clx-content">
 
-                {
-                    shops.length ? shops.map(shop =>
-                        <CardShop shop={shop} key={shop._id} setActiveShop={setActiveShop}/>
-                    ) : ''
-                }
+                    <ul className="clx-content--shops">
 
-            </ul>
-            <div className="clx-content--goods">
-                {drugs.length ? drugs.map(drug => <CardDrug key={drug._id} card={drug} setToCart={setToCart}/>
-                ) : ''
-                }
+                        {
+                            shops.length ? shops.map(shop =>
+                                <CardShop shop={shop} key={shop._id} setActiveShop={setActiveShop}/>
+                            ) : ''
+                        }
+
+                    </ul>
+                    <div className="clx-content--goods">
+                        {drugs.length ? drugs.map(drug => <CardDrug key={drug._id} card={drug} setToCart={setToCart}/>
+                        ) : ''
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     );

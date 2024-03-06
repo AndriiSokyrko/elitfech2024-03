@@ -1,8 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import CartItem from "./cart-items/cart-item";
 import "./cart.scss"
-import {PROTOCOL, URLBASE, UrlGoods, UrlHistory} from "../../ENV/env";
-import {getDrugsByIdShop} from "../../services/drugs/drugServices";
+import {PROTOCOL, URLBASE, UrlHistory} from "../../ENV/env";
 import {saveOrder} from "../../services/history/historyService";
 import Message from "../message/message";
 

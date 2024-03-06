@@ -14,6 +14,7 @@ function CardDrug({card, setToCart}) {
 
             <img src={image} alt=""/>
             <h1>{card.title}</h1>
+            <h3>{card.price} грн.</h3>
             <button onClick={handleAddToCart}>Add to cart</button>
         </div>
     );
