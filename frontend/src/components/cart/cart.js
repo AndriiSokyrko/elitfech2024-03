@@ -14,6 +14,7 @@ function Cart() {
     const [info, setInfo] = useState(infoStore? {info:infoStore} : {info:{name:'',email:'',phone:'',address:''}})
     const [orders, setOrders] = useState({items:goods, ...info})
     const [status, setStatus] = useState(false)
+    const [textMessage, setTextMessage] = useState("Orders is saved succesful!")
     const handleUpdateGoods = () =>{
         goods = JSON.parse(localStorage.getItem('cart'))
         setOrders({items:goods,...info})
@@ -48,6 +49,16 @@ function Cart() {
     const handleSubmit = async ()=> {
         const url = PROTOCOL + URLBASE + UrlHistory + '/' + 'save';
         const localOrders = JSON.parse(localStorage.getItem('orders'))
+        console.log(orders)
+        if(!orders.items.length) {
+            setStatus(true)
+            setTextMessage('No orders! Make orders!')
+            setTimeout(()=>{
+                setStatus(false)
+                setTextMessage("Orders is saved succesful!")
+            },1000)
+            return
+        }
         localStorage.setItem('orders',JSON.stringify([...localOrders,orders]))
         try {
             const drugsByIdShop = await saveOrder(url, JSON.stringify(orders))
@@ -81,7 +92,7 @@ function Cart() {
 
     return (
         <div className="clx_cart--wrapper">
-            <Message status={status} text="Orders is saved succesful!"/>
+            <Message status={status} text={textMessage}/>
             <div className="clx_cart">
                 <div className="clx_cart--address">
                     <label htmlFor="Name">Name</label>
