@@ -4,11 +4,9 @@ const {mongoose} = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const fs = require("fs");
-const {totalInfoRouter} = require("./routers/totalInfo");
 
 const {goodsRouter} = require("./routers/goodsRouter.js");
 const {shopsRouter} = require("./routers/shopsRouter.js");
-const {menuRouter} = require("./routers/menuRouter.js");
 const {historyRouter} = require("./routers/historyRouter");
 
 
