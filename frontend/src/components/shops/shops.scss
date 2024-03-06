@@ -12,6 +12,10 @@
     padding: 15px;
     margin: 0 auto;
     border: 2px solid grey;
+    cursor: pointer;
+    li:hover{
+      background: #cdcdcd;
+    }
   }
   .clx-content--goods{
     display: grid;
@@ -22,6 +26,7 @@
     margin: 0 auto;
     border: 2px solid grey;
     overflow: auto;
+
   }
 
 }
