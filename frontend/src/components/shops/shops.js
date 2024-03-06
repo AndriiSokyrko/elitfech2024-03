@@ -25,7 +25,7 @@ const Shops = () => {
             }
         }, [url]
     )
-    const [sortType, setSortType] = useState(null)
+    const [sortType, setSortType] = useState('data')
     const sortItems = (par) => {
          setSortType(par)
         if(sortType==='price'){
